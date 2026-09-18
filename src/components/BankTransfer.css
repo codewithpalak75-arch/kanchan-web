@@ -1,0 +1,620 @@
+/* ==========================================================================
+   Premium Direct Bank Transfer & UPI Section
+   ========================================================================== */
+
+.bt-premium-section {
+  position: relative;
+  background: linear-gradient(180deg, #fbfcfe 0%, #f4f6fa 50%, #eff2f8 100%);
+  padding: 100px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1e293b;
+  overflow: hidden;
+}
+
+/* Ambient Background Glows */
+.bt-ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+.glow-1 {
+  top: 10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(243, 115, 33, 0.25) 0%, rgba(243, 115, 33, 0) 70%);
+}
+
+.glow-2 {
+  bottom: 5%;
+  right: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, rgba(37, 99, 235, 0) 70%);
+}
+
+.bt-premium-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Header */
+.bt-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px auto;
+}
+
+.bt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.bt-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+  animation: btPulse 2s infinite;
+}
+
+@keyframes btPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+.bt-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+.bt-title-highlight {
+  color: #f37321;
+}
+
+.bt-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Main Dual-Pane Showcase Card */
+.bt-showcase-card {
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+/* Left Column: Bank Account Details */
+.bt-left-pane {
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #f1f5f9;
+  text-align: left;
+}
+
+.bt-pane-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.bt-pane-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bt-icon-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt-pane-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.bt-pane-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+.bt-verified-pill {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Details List */
+.bt-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.bt-detail-item {
+  background: #f8fafc;
+  border: 1.5px solid #eef2f6;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.bt-detail-item:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.bt-item-highlight {
+  background: #fffbf7;
+  border-color: #fed7aa;
+}
+
+.bt-item-highlight:hover {
+  background: #ffffff;
+  border-color: #f97316;
+}
+
+.bt-item-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.bt-item-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.bt-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.bt-item-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.bt-item-value {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.bt-item-highlight .bt-item-value {
+  font-size: 18px;
+  color: #c2410c;
+  letter-spacing: 0.5px;
+}
+
+.bt-copy-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #475569;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.bt-copy-action-btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.bt-copy-action-btn.copied {
+  background: #16a34a !important;
+  color: #ffffff !important;
+  border-color: #16a34a !important;
+}
+
+.bt-check-icon {
+  font-weight: bold;
+}
+
+/* Left Footer */
+.bt-left-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 20px;
+}
+
+.bt-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.bt-info-icon {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.bt-online-form-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.bt-online-form-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Right Column: Scan & Pay via UPI */
+.bt-right-pane {
+  background: #fafcff;
+  padding: 44px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bt-upi-card {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bt-upi-header {
+  margin-bottom: 20px;
+}
+
+.bt-upi-badge {
+  display: inline-block;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.bt-upi-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.bt-upi-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Scanner Frame */
+.bt-qr-scanner-frame {
+  position: relative;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.bt-qr-code-img {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Corner brackets */
+.bt-scanner-corners .corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #f37321;
+  border-style: solid;
+}
+
+.corner.top-left {
+  top: 8px;
+  left: 8px;
+  border-width: 3px 0 0 3px;
+  border-top-left-radius: 6px;
+}
+
+.corner.top-right {
+  top: 8px;
+  right: 8px;
+  border-width: 3px 3px 0 0;
+  border-top-right-radius: 6px;
+}
+
+.corner.bottom-left {
+  bottom: 8px;
+  left: 8px;
+  border-width: 0 0 3px 3px;
+  border-bottom-left-radius: 6px;
+}
+
+.corner.bottom-right {
+  bottom: 8px;
+  right: 8px;
+  border-width: 0 3px 3px 0;
+  border-bottom-right-radius: 6px;
+}
+
+/* UPI ID Box */
+.bt-upi-id-box {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.bt-upi-id-left {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2px;
+  min-width: 0;
+}
+
+.bt-upi-id-label {
+  font-size: 10.5px;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bt-upi-id-code {
+  font-size: 13.5px;
+  color: #0f172a;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bt-upi-copy-btn {
+  background: #f37321;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(243, 115, 33, 0.3);
+}
+
+.bt-upi-copy-btn:hover {
+  background: #e06010;
+}
+
+.bt-upi-copy-btn.copied {
+  background: #16a34a !important;
+  box-shadow: none;
+}
+
+/* Mobile Quick Pay Button */
+.bt-mobile-upi-btn {
+  width: 100%;
+  box-sizing: border-box;
+  background: #0f172a;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.bt-mobile-upi-btn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
+
+/* Trust Metrics Grid */
+.bt-trust-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.bt-metric-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 22px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.bt-metric-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.bt-metric-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.bt-metric-text h4 {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.bt-metric-text p {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 968px) {
+  .bt-showcase-card {
+    grid-template-columns: 1fr;
+  }
+  .bt-left-pane {
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 32px 24px;
+  }
+  .bt-right-pane {
+    padding: 36px 24px;
+  }
+  .bt-trust-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bt-premium-section {
+    padding: 60px 16px;
+  }
+  .bt-title {
+    font-size: 28px;
+  }
+  .bt-left-pane {
+    padding: 24px 18px;
+  }
+  .bt-right-pane {
+    padding: 28px 18px;
+  }
+  .bt-detail-item {
+    padding: 14px;
+    flex-wrap: wrap;
+  }
+  .bt-copy-action-btn {
+    margin-left: auto;
+  }
+  .bt-trust-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

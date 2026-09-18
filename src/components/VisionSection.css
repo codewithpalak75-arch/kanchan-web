@@ -1,0 +1,78 @@
+.vision-section {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Another medical background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+}
+
+.vision-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.85); /* Heavy dark overlay */
+  z-index: 1;
+}
+
+.vision-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-icon {
+  font-size: 48px;
+  color: #f37321;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.vision-quote {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.vision-divider {
+  width: 60px;
+  height: 2px;
+  background-color: #f37321;
+  margin-bottom: 20px;
+}
+
+.vision-author {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vision-section {
+    padding: 80px 20px;
+  }
+  
+  .vision-quote {
+    font-size: 22px;
+  }
+  
+  .quote-icon {
+    font-size: 36px;
+  }
+}
